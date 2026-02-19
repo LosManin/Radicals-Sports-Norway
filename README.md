@@ -16,6 +16,7 @@
   cbq('track', 'PageView');
 </script>
 <!-- End Signals Gateway Pixel Code -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RADICAL SPORTS</title>
@@ -32,7 +33,7 @@
         s.parentNode.insertBefore(t,s)
       }(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1295670662282969');
+      fbq('init', '1038318315115764');
       fbq('track', 'PageView');
     </script>
     <noscript>
@@ -41,6 +42,25 @@
     </noscript>
 
     <style>
+      :root{
+        --bg0:#060B14;
+        --bg1:#0B1220;
+        --card0:#0E1A2E;
+        --stroke:rgba(255,255,255,.08);
+
+        --blue:#00A3FF;
+        --blue2:#2D5BFF;
+        --blueGlow:rgba(0,163,255,.28);
+
+        --money:#00D26A;
+        --moneyGlow:rgba(0,210,106,.22);
+
+        --text:#EAF2FF;
+        --muted:rgba(234,242,255,.72);
+
+        --shadow: 0 20px 70px rgba(0,0,0,.55);
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -49,75 +69,109 @@
       }
 
       body {
-        background: radial-gradient(#0f0f0f, #000000);
-        color: white;
+        color: var(--text);
         display: flex;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
+
+        background:
+          radial-gradient(900px 520px at 50% -10%, rgba(45,91,255,.35), transparent 60%),
+          radial-gradient(720px 460px at 15% 15%, rgba(0,163,255,.22), transparent 55%),
+          radial-gradient(720px 460px at 85% 18%, rgba(0,210,106,.10), transparent 60%),
+          linear-gradient(180deg, var(--bg0), var(--bg1));
       }
 
       .card {
-        background-color: #111;
-        border-radius: 20px;
+        background: linear-gradient(180deg, rgba(14,26,46,.95), rgba(10,18,32,.92));
+        border: 1px solid var(--stroke);
+        border-radius: 22px;
         padding: 30px;
         text-align: center;
-        box-shadow: 0 0 25px #00ffcc33;
+        box-shadow: var(--shadow);
         max-width: 400px;
         width: 90%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before{
+        content:"";
+        position:absolute;
+        inset:-2px;
+        background:
+          radial-gradient(520px 280px at 50% 0%, rgba(0,163,255,.20), transparent 60%),
+          radial-gradient(440px 260px at 20% 28%, rgba(45,91,255,.18), transparent 62%),
+          radial-gradient(440px 260px at 80% 32%, rgba(0,210,106,.10), transparent 65%);
+        pointer-events:none;
+      }
+
+      .card > *{
+        position: relative;
+        z-index: 1;
       }
 
       .card img {
         width: 120px;
         border-radius: 50%;
         margin-bottom: 20px;
+        border: 2px solid rgba(0,163,255,.45);
+        box-shadow: 0 0 0 6px rgba(0,163,255,.10), 0 18px 55px rgba(0,0,0,.55);
       }
 
       h1 {
         font-size: 24px;
         margin-bottom: 10px;
+        letter-spacing: .6px;
       }
 
       .features {
         margin: 15px 0;
         font-size: 16px;
         line-height: 1.6;
-      }
-
-      .features span {
-        display: block;
-        margin-top: 5px;
-      }
-
-      .btn {
-        margin-top: 20px;
-        display: inline-block;
-        background-color: #00aaff;
-        color: white;
-        padding: 12px 25px;
-        border-radius: 30px;
-        font-weight: bold;
-        text-decoration: none;
-        box-shadow: 0 0 10px #00aaffaa;
-        transition: 0.3s ease;
-      }
-
-      .btn:hover {
-        background-color: #008fcc;
-        box-shadow: 0 0 20px #00aaff;
+        color: var(--muted);
       }
 
       .rating {
         margin-top: 20px;
         font-size: 18px;
+        color: var(--text);
       }
 
       .footer {
         margin-top: 25px;
         font-size: 14px;
-        color: #bbb;
+        color: rgba(234,242,255,.62);
+      }
+
+      .btn {
+        margin-top: 20px;
+        display: inline-block;
+        background: linear-gradient(90deg, var(--blue2), var(--blue));
+        color: white;
+        padding: 12px 25px;
+        border-radius: 14px;
+        font-weight: 800;
+        text-decoration: none;
+        letter-spacing: .6px;
+        text-transform: uppercase;
+        border: 1px solid rgba(255,255,255,.10);
+        box-shadow: 0 18px 55px var(--blueGlow);
+        transition: 0.3s ease;
+      }
+
+      .btn:hover {
+        filter: brightness(1.05);
+        box-shadow: 0 22px 70px rgba(0,163,255,.32);
+      }
+
+      .limited {
+        color: var(--money);
+        text-shadow: 0 0 18px var(--moneyGlow);
+        font-weight: 800;
       }
     </style>
+
     <!-- Facebook Pixel Base Code + API de Conversiones -->
 <script>
   !function(f,b,e,v,n,t,s)
@@ -169,27 +223,55 @@
     }
   });
 </script>
-<!-- Fin integración Meta Pixel + API -->
+<!-- Fin integración Meta Pixel + API -->
+
   </head>
   <body>
     <div class="card">
       <img src="Logo.jpg" alt="Radical Sports Logo" />
       <h1>RADICAL SPORTS</h1>
+
       <div class="features">
-    ✅Join, check the pinned video – full info about the free challenge⚠️
-                           ✅ THREE FREE FOOTBALL PLAYS EVERY DAY ⭐<br />
+        ✅Join, check the pinned video – full info about the free challenge⚠️<br />
+        ✅ THREE FREE FOOTBALL PLAYS EVERY DAY ⭐<br />
         🔍 Tactical and professional breakdowns<br />
-        🌟 <strong style="color: #00ff99;">Limited-time access – Tap below to enter</strong>
+        🌟 <span class="limited">Limited-time access – Tap below to enter</span>
       </div>
-<a href="https://t.me/+9l_ePmg2ZxsyM2I0"
-   onclick="fbq('trackCustom', 'JoinTelegramClick');"
-   style="display:inline-block; padding:14px 28px; background:#00aaff; color:white; text-align:center; text-decoration:none; border-radius:8px; font-weight:bold; font-size:16px; box-shadow:0 0 12px #00aaff; transition:0.3s ease all;"
-   onmouseover="this.style.background='#008ecc'; this.style.boxShadow='0 0 16px #008ecc';"
-   onmouseout="this.style.background='#00aaff'; this.style.boxShadow='0 0 12px #00aaff';">
-   JOIN THE COMMUNITY
-</a>
+
+      <a
+        class="btn"
+        id="join-telegram-button"
+        href="https://t.me/+9l_ePmg2ZxsyM2I0"
+        onclick="fbq('trackCustom', 'JoinTelegramClick'); trackSubscribe();"
+      >
+        JOIN THE COMMUNITY
+      </a>
+
       <div class="rating">⭐️⭐️⭐️⭐️⭐️<br />4.9/5 rating (1.5k+ users)</div>
-      <div class="footer">This is your invite to join <strong>RADICAL SPORTS</strong>.<br />Tap the button to join.<br />🔞 +18 only</div>
+      <div class="footer">
+        This is your invite to join <strong>RADICAL SPORTS</strong>.<br />
+        Tap the button to join.<br />
+        🔞 +18 only
+      </div>
     </div>
+
+    <script>
+async function trackSubscribe() {
+  try {
+    const response = await fetch("/api/meta-conversion", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        event_name: "Subscribe",
+        event_source_url: "https://radicalssportspro.com/"
+      }),
+    });
+    console.log("API Response:", await response.json());
+  } catch (error) {
+    console.error("API Error:", error);
+  }
+}
+</script>
+
   </body>
 </html>

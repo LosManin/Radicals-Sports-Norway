@@ -10,7 +10,7 @@
   n.queue=[];t=h.createElement(e);t.async=!0;
   t.src=v;s=h.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://s2s.s2s.radicalssportspro.com/sdk/6661748307803504812/events.js');
+  'https://s2s.s2s.mastersoddstips.com/sdk/6661748307803504812/events.js');
   cbq('setHost', 'https://s2s.s2s.radicalssportspro.com/');
   cbq('init', '6661748307803504812');
   cbq('track', 'PageView');
@@ -18,7 +18,7 @@
 <!-- End Signals Gateway Pixel Code -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RADICAL SPORTS</title>
+    <title>MASTER ODDS</title>
     <link rel="icon" href="Logo.jpg" />
 
     <!-- Facebook Pixel -->
@@ -173,85 +173,39 @@
   </head>
   <body>
     <div class="card">
-      <img src="MasterOddsLogo.jpg" alt="Master Odds Logo" />
+      <img src="MasterOddsLogo.jpg" alt="Radical Sports Logo" />
       <h1>MASTER ODDS</h1>
-
       <div class="features">
-        ✅ THREE FREE FOOTBALL & NBA PLAYS EVERY DAY ⭐<br />
+                           ✅ THREE FREE FOOTBALL & NBA PLAYS EVERY DAY ⭐<br />
         🔍 Tactical and professional breakdowns<br />
-        🌟 <strong style="color: #00a0ff;">Limited-time access – Tap below to enter</strong>
+        🌟 <strong style="color: #00ff99;">Limited-time access – Tap below to enter</strong>
       </div>
-
-      <a
-        id="join-telegram-button"
-        href="https://t.me/masteroddsfree"
-        class="btn"
-        style="display:inline-block; padding:14px 28px; background:#00a0ff; color:white; text-align:center; text-decoration:none; border-radius:10px; font-weight:bold; font-size:16px; box-shadow:0 0 14px rgba(0,160,255,0.7); transition:0.3s ease all;"
-        onmouseover="this.style.background='#0086d6'; this.style.boxShadow='0 0 18px rgba(0,160,255,0.85)';"
-        onmouseout="this.style.background='#00a0ff'; this.style.boxShadow='0 0 14px rgba(0,160,255,0.7)';"
-      >
-        JOIN THE COMMUNITY
-      </a>
-
+<a href="https://t.me/masteroddsfree"
+onclick="fbq('trackCustom', 'JoinTelegramClick'); trackSubscribe();"
+   style="display:inline-block; padding:14px 28px; background:#00aaff; color:white; text-align:center; text-decoration:none; border-radius:8px; font-weight:bold; font-size:16px; box-shadow:0 0 12px #00aaff; transition:0.3s ease all;"
+   onmouseover="this.style.background='#008ecc'; this.style.boxShadow='0 0 16px #008ecc';"
+   onmouseout="this.style.background='#00aaff'; this.style.boxShadow='0 0 12px #00aaff';">
+   JOIN THE COMMUNITY
+</a>
       <div class="rating">⭐️⭐️⭐️⭐️⭐️<br />4.9/5 rating (1.5k+ users)</div>
-      <div class="footer">
-        This is your invite to join MASTER ODDS.<br />
-        Tap the button to join.<br />
-        🔞 +18 only
-      </div>
+      <div class="footer">This is your invite to join <strong>MASTER ODDS</strong>.<br />Tap the button to join.<br />🔞 +18 only</div>
     </div>
-
     <script>
-      async function trackSubscribe() {
-        try {
-          const response = await fetch("/api/meta-conversion", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              event_name: "Subscribe",
-              event_source_url: window.location.href
-            })
-          });
-
-          const data = await response.json();
-          console.log("API Response:", data);
-        } catch (error) {
-          console.error("API Error:", error);
-        }
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const btn = document.getElementById("join-telegram-button");
-
-        if (!btn) return;
-
-        btn.addEventListener("click", async function (e) {
-          e.preventDefault();
-
-          try {
-            // Browser Pixel events
-            fbq("track", "Lead");
-            fbq("trackCustom", "JoinTelegramClick");
-
-            // Signals Gateway custom event
-            if (typeof cbq === "function") {
-              cbq("track", "JoinTelegramClick");
-            }
-
-            // Backend Conversion API event
-            await trackSubscribe();
-          } catch (error) {
-            console.error("Tracking Error:", error);
-          }
-
-          // Small delay so tracking has time to fire
-          setTimeout(() => {
-            window.location.href = btn.href;
-          }, 350);
-        });
-      });
-    </script>
+async function trackSubscribe() {
+  try {
+    const response = await fetch("/api/meta-conversion", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        event_name: "Subscribe",
+        event_source_url: "https://radicalssportspro.com/"
+      }),
+    });
+    console.log("API Response:", await response.json());
+  } catch (error) {
+    console.error("API Error:", error);
+  }
+}
+</script>
   </body>
 </html>

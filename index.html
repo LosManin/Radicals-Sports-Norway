@@ -158,7 +158,7 @@
   </head>
   <body>
     <div class="card">
-      <img src="MasterOddsLogo.jpg" alt="Radical Sports Logo" />
+      <img src="MasterOddsLogo.jpg" alt="Master Odds Logo" />
       <h1>MASTER ODDS</h1>
       <div class="features">
         
@@ -167,7 +167,7 @@
         🌟 <strong style="color: #00ff99;">Limited-time access – Tap below to enter</strong>
       </div>
 <a href="https://t.me/masteroddsfree"
-onclick="fbq('trackCustom', 'JoinTelegramClick'); trackSubscribe();"
+onclick="fbq('track', 'Lead', {value: 0.75, currency: 'EUR'}); fbq('trackCustom', 'JoinTelegramClick'); trackSubscribe();"
    style="display:inline-block; padding:14px 28px; background:#00aaff; color:white; text-align:center; text-decoration:none; border-radius:8px; font-weight:bold; font-size:16px; box-shadow:0 0 12px #00aaff; transition:0.3s ease all;"
    onmouseover="this.style.background='#008ecc'; this.style.boxShadow='0 0 16px #008ecc';"
    onmouseout="this.style.background='#00aaff'; this.style.boxShadow='0 0 12px #00aaff';">
@@ -183,8 +183,12 @@ async function trackSubscribe() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        event_name: "Subscribe",
-        event_source_url: "https://radicalssportspro.com/"
+        event_name: "Lead",
+event_source_url: "https://mastersoddstips.com/",
+custom_data: {
+  value: 0.75,
+  currency: "EUR"
+}
       }),
     });
     console.log("API Response:", await response.json());

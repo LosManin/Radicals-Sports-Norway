@@ -72,7 +72,7 @@ module.exports = async (req, res) => {
   }
 
   const event_name = body.event_name || 'Subscribe';
-  const event_source_url = body.event_source_url || 'https://radicalsportspro.com/';
+  const event_source_url = body.event_source_url || 'https://mastersoddstips.com/';
 
   const payload = {
     data: [
